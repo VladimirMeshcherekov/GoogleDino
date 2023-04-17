@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-public class PlayerJumpAnimation : MonoBehaviour
+public class PlayerJumpAnimation : MonoBehaviour, IJumpPlayer
 {
     [SerializeField] private Transform endJumpPoint;
     [SerializeField] private int jumpPower;
