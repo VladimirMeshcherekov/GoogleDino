@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerJumpControll : MonoBehaviour
 {
@@ -43,6 +44,12 @@ public class PlayerJumpControll : MonoBehaviour
             _isPlayerAbleToJump = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        _jumpPlayer.Die();
+    }
+
 
     void Jump()
     {
