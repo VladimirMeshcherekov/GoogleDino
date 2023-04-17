@@ -1,75 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &951900428107445562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7156167574881071897}
-  - component: {fileID: 3368983060371694585}
-  - component: {fileID: 8832266266842516399}
-  m_Layer: 0
-  m_Name: KillPlayerCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7156167574881071897
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951900428107445562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5070525314715767143}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3368983060371694585
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951900428107445562}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.033572674, y: 0.61964405}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6938372, y: 1.2379134}
-  m_EdgeRadius: 0
---- !u!114 &8832266266842516399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951900428107445562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79fe0cae29e92c4995c3149039249ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3618864396006779922
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +92,7 @@ GameObject:
   - component: {fileID: 5070525314715767143}
   - component: {fileID: 1091278059752148310}
   - component: {fileID: 4045272842190198077}
+  - component: {fileID: 4996536330520588520}
   m_Layer: 0
   m_Name: Cactus C
   m_TagString: Untagged
@@ -181,7 +112,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4313683072901336157}
-  - {fileID: 7156167574881071897}
   - {fileID: 6931218023490191499}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -220,6 +150,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyVelocity: 1
+--- !u!60 &4996536330520588520
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787941886988475037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.17883301, y: 1.1983366}
+      - {x: -0.2745471, y: 0.7546599}
+      - {x: -0.82838684, y: 0.75296545}
+      - {x: -0.8252625, y: -0.007532954}
+      - {x: 0.8252622, y: -0.000111579895}
+      - {x: 0.82696056, y: 0.85616994}
+      - {x: 0.38709593, y: 1.1943817}
+      - {x: 0.19751263, y: 1.272852}
 --- !u!1 &8247825893625839855
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5070525314715767143}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8471726186177522033
 BoxCollider2D:
