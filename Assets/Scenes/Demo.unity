@@ -1068,6 +1068,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1129849743}
   - component: {fileID: 1129849742}
+  - component: {fileID: 1129849745}
+  - component: {fileID: 1129849744}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1102,6 +1104,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129849744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129849741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e721cc53017c204e9df0efa670e5143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1129849745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129849741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca99f74dd0f48b22c8e85ff26b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1396613343}
 --- !u!1 &1140468118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,10 +2161,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus A
       objectReference: {fileID: 0}
+    - target: {fileID: 3566784074543913912, guid: 60145cdba5d4e0944b88a58f9c1a60c2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5507725494859692504, guid: 60145cdba5d4e0944b88a58f9c1a60c2,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951071403258347386, guid: 60145cdba5d4e0944b88a58f9c1a60c2,
+        type: 3}
+      propertyPath: enemyVelocity
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60145cdba5d4e0944b88a58f9c1a60c2, type: 3}
@@ -2152,6 +2189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cactus C
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787941886988475037, guid: d7c895f22427e6f4987a04443dab915c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5070525314715767143, guid: d7c895f22427e6f4987a04443dab915c,
         type: 3}

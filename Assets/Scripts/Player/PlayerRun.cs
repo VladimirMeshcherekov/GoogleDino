@@ -12,5 +12,10 @@ public class PlayerRun : MonoBehaviour
             PlayerDie?.Invoke();
             gameObject.GetComponent<IAnimatePlayer>().SetDieAnimation();
         }
+
+        if (enterCollider2D.gameObject.TryGetComponent(out AddScoreToPlayer addScoreToPlayer))
+        {
+            PlayerAddScore?.Invoke();
+        }
     }
 }
