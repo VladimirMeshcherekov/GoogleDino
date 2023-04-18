@@ -3,16 +3,22 @@
 public class TimeController : MonoBehaviour
 {
    [SerializeField] private PlayerRun playerRun;
-   private float _defaultTimeScale;
+   private const float DefaultTimeScale = 1;
    private bool _isPlayerDie = false;
    private void Awake()
    {
-      _defaultTimeScale = Time.timeScale;
+    
+      ChangeTimeSpeed(false);
    }
 
    private void OnEnable()
    {
       playerRun.PlayerDie += PlayerDie;
+   }
+
+   private void OnDisable()
+   {
+      playerRun.PlayerDie -= PlayerDie;
    }
 
    public void ChangePauseState()
@@ -37,7 +43,7 @@ public class TimeController : MonoBehaviour
          Time.timeScale = 0;
          return;
       }
-      Time.timeScale = _defaultTimeScale;
+      Time.timeScale = DefaultTimeScale;
    }
 
    private void PlayerDie()

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
-
+using TMPro;
 public class ShowPlayerScore : MonoBehaviour
 {
     [SerializeField] private PlayerRun player;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private string textBeforeScore;
     private int _playerScore;
     private void OnEnable()
     {
@@ -19,10 +21,15 @@ public class ShowPlayerScore : MonoBehaviour
         _playerScore++;
         ShowNewPlayerScore();
     }
-    
+
+    private void Start()
+    {
+        ShowNewPlayerScore();
+    }
+
     private void ShowNewPlayerScore()
     {
-        print(_playerScore);
+        scoreText.text = textBeforeScore + _playerScore;
     }
     
 }
