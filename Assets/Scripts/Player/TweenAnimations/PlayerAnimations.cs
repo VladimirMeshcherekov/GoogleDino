@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class PlayerAnimations : MonoBehaviour, IJumpPlayer
+public class PlayerAnimations : MonoBehaviour, IAnimatePlayer
 {
     [SerializeField] private Transform endJumpPoint;
     [SerializeField] private int jumpPower;
@@ -20,7 +20,7 @@ public class PlayerAnimations : MonoBehaviour, IJumpPlayer
         _playerAnimator = GetComponent<Animator>();
     }
 
-    public void Jump()
+    public void SetJumpAnimation()
     {
         _playerAnimator.Play(playerJump.name);
         Vector3 positionBeforeJump = transform.position;
@@ -29,12 +29,12 @@ public class PlayerAnimations : MonoBehaviour, IJumpPlayer
             .SetDelay(jumpDuration);
     }
 
-    public void Die()
+    public void SetDieAnimation()
     {
         _playerAnimator.Play(playerDie.name);
     }
 
-    public void Run()
+    public void SetRunAnimation()
     {
         _playerAnimator.Play(playerRun.name);
     }
