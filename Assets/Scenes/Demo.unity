@@ -691,6 +691,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus B
       objectReference: {fileID: 0}
+    - target: {fileID: 7439177691758841788, guid: c55bce3d90b27a24b8f0c9b6ec0b78b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7439177691758841791, guid: c55bce3d90b27a24b8f0c9b6ec0b78b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1304,6 +1309,7 @@ GameObject:
   - component: {fileID: 1396613340}
   - component: {fileID: 1396613341}
   - component: {fileID: 1396613342}
+  - component: {fileID: 1396613344}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1405,8 +1411,9 @@ MonoBehaviour:
   jumpPower: 1
   jumpDuration: 1
   fallAcceleration: 10
-  playerDieSprite: {fileID: -4529042392078601758, guid: 51c81e11cf1b83741a6d4debdf26562c,
-    type: 3}
+  playerJump: {fileID: 7400000, guid: 10885086fb13ad742aa723c9cb8bbdc7, type: 2}
+  playerRun: {fileID: 7400000, guid: af66dddf374dc35469df85836dbe3679, type: 2}
+  playerDie: {fileID: 7400000, guid: ace721a3282ed4d4a869617446e15e35, type: 2}
 --- !u!61 &1396613341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1454,6 +1461,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &1396613344
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396613336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 346222f07c5a092429ab1ca4097e0aeb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1416413606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cactus A
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507725494859692504, guid: 60145cdba5d4e0944b88a58f9c1a60c2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60145cdba5d4e0944b88a58f9c1a60c2, type: 3}

@@ -26,7 +26,7 @@ public class PlayerJumpControll : MonoBehaviour
 
     private void Start()
     {
-        _jumpPlayer = GetComponent<PlayerJumpAnimation>();
+        _jumpPlayer = GetComponent<PlayerAnimations>();
     }
 
     private void OnCollisionEnter2D(Collision2D enterCollision)
