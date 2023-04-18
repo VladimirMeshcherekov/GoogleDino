@@ -1,38 +1,44 @@
 ﻿using UnityEngine;
-
+[RequireComponent(typeof(PlayerAnimations), typeof(PlayerRun))]
 public class PlayerJumpControll : MonoBehaviour
 {
     private PlayerInput _playerInput;
-    private IJumpPlayer _jumpPlayer;
+    private IAnimatePlayer _animatePlayer;
 
-    private bool _isPlayerAbleToJump = true;
-
+    private bool _isPlayerOnAGround = true;
+    private bool _isPlayerAlive = true;
+    private PlayerRun _playerRun;
+    
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.Player.Jump.performed += ctx => Jump();
+        _playerRun = GetComponent<PlayerRun>();
     }
 
     private void OnEnable()
     {
         _playerInput.Enable();
+        _playerRun.PlayerDie += PlayerDie;
     }
 
     private void OnDisable()
     {
         _playerInput.Disable();
+        _playerRun.PlayerDie -= PlayerDie;
     }
 
     private void Start()
     {
-        _jumpPlayer = GetComponent<PlayerJumpAnimation>();
+        _animatePlayer = GetComponent<PlayerAnimations>();
     }
 
     private void OnCollisionEnter2D(Collision2D enterCollision)
     {
         if (enterCollision.gameObject.TryGetComponent(out Ground ground))
         {
-            _isPlayerAbleToJump = true;
+            _isPlayerOnAGround = true;
+            _animatePlayer.SetRunAnimation();
         }
     }
 
@@ -40,15 +46,21 @@ public class PlayerJumpControll : MonoBehaviour
     {
         if (enterCollision.gameObject.TryGetComponent(out Ground ground))
         {
-            _isPlayerAbleToJump = false;
+            _isPlayerOnAGround = false;
         }
     }
 
-    void Jump()
+    private void Jump()
     {
-        if (_isPlayerAbleToJump)
+        if (_isPlayerOnAGround && _isPlayerAlive)
         {
-            _jumpPlayer.Jump();
+            _animatePlayer.SetJumpAnimation();
         }
     }
+
+    private void PlayerDie()
+    {
+        _isPlayerAlive = false;
+    }
+    
 }
