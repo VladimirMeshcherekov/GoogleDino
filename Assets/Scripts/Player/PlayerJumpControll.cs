@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
-[RequireComponent(typeof(PlayerAnimations), typeof(PlayerRun))]
+[RequireComponent(typeof(PlayerAnimations), typeof(PlayerRun), typeof(IAnimatePlayer))]
+[RequireComponent(typeof(ISoundPlayer))]
 public class PlayerJumpControll : MonoBehaviour
 {
     private PlayerInput _playerInput;
     private IAnimatePlayer _animatePlayer;
+    private ISoundPlayer _soundPlayer;
 
     private bool _isPlayerOnAGround = true;
     private bool _isPlayerAlive = true;
@@ -14,6 +16,7 @@ public class PlayerJumpControll : MonoBehaviour
         _playerInput = new PlayerInput();
         _playerInput.Player.Jump.performed += ctx => Jump();
         _playerRun = GetComponent<PlayerRun>();
+        _soundPlayer = GetComponent<ISoundPlayer>();
     }
 
     private void OnEnable()
@@ -39,6 +42,7 @@ public class PlayerJumpControll : MonoBehaviour
         {
             _isPlayerOnAGround = true;
             _animatePlayer.SetRunAnimation();
+            _soundPlayer.PlayLandSound();
         }
     }
 
@@ -55,6 +59,8 @@ public class PlayerJumpControll : MonoBehaviour
         if (_isPlayerOnAGround && _isPlayerAlive)
         {
             _animatePlayer.SetJumpAnimation();
+            _soundPlayer.PlayJumpSound();
+            
         }
     }
 
