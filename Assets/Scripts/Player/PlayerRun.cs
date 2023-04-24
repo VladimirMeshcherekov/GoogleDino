@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
 [RequireComponent(typeof(IAnimatePlayer), typeof(ISoundPlayer))]
 public class PlayerRun : MonoBehaviour
 {
@@ -20,8 +22,8 @@ public class PlayerRun : MonoBehaviour
         if (enterCollider2D.gameObject.TryGetComponent(out CactusMove cactusMove))
         {
             PlayerDie?.Invoke();
-           _animatePlayer.SetDieAnimation();
-           _soundPlayer.PlayDieSound();
+            _animatePlayer.SetDieAnimation();
+            _soundPlayer.PlayDieSound();
         }
 
         if (enterCollider2D.gameObject.TryGetComponent(out AddScoreToPlayer addScoreToPlayer))

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
-[RequireComponent(typeof(PlayerAnimations), typeof(PlayerRun), typeof(IAnimatePlayer))]
-[RequireComponent(typeof(ISoundPlayer))]
+using Zenject;
+
+[RequireComponent(typeof(PlayerAnimations), typeof(ISoundPlayer), typeof(IAnimatePlayer))]
 public class PlayerJumpControll : MonoBehaviour
 {
     private PlayerInput _playerInput;
@@ -9,13 +10,12 @@ public class PlayerJumpControll : MonoBehaviour
 
     private bool _isPlayerOnAGround = true;
     private bool _isPlayerAlive = true;
-    private PlayerRun _playerRun;
-    
+    [Inject] private PlayerRun _playerRun;
+
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.Player.Jump.performed += ctx => Jump();
-        _playerRun = GetComponent<PlayerRun>();
         _soundPlayer = GetComponent<ISoundPlayer>();
     }
 
@@ -60,7 +60,6 @@ public class PlayerJumpControll : MonoBehaviour
         {
             _animatePlayer.SetJumpAnimation();
             _soundPlayer.PlayJumpSound();
-            
         }
     }
 
@@ -68,5 +67,4 @@ public class PlayerJumpControll : MonoBehaviour
     {
         _isPlayerAlive = false;
     }
-    
 }

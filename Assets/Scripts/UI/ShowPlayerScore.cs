@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using TMPro;
+using Zenject;
+
 public class ShowPlayerScore : MonoBehaviour
 {
-    [SerializeField] private PlayerRun player;
+    [Inject] private PlayerRun player;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private string textBeforeScore;
     private int _playerScore;

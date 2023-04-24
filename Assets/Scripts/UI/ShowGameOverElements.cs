@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Zenject;
 
 public class ShowGameOverElements : MonoBehaviour
 {
-   [SerializeField] private PlayerRun player;
+   [Inject] private PlayerRun player;
    [SerializeField] private GameObject objectToShow;
 
    private void OnEnable()

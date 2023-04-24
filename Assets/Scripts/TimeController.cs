@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Zenject;
 
 public class TimeController : MonoBehaviour
 {
-   [SerializeField] private PlayerRun playerRun;
+   [Inject] private PlayerRun playerRun;
    private const float DefaultTimeScale = 1;
    private bool _isPlayerDie = false;
    private void Awake()
