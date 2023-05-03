@@ -1,6 +1,5 @@
 ﻿using DG.Tweening;
 using UnityEngine;
-
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimations : MonoBehaviour, IAnimatePlayer
 {
@@ -9,11 +8,9 @@ public class PlayerAnimations : MonoBehaviour, IAnimatePlayer
     [SerializeField] private float jumpDuration;
     [SerializeField] private float fallAcceleration;
     private const int JumpNum = 1;
-    [Space]
-    [SerializeField] private AnimationClip playerJump, playerRun, playerDie;
-    
-    private Animator _playerAnimator;
+    [Space] [SerializeField] private AnimationClip playerJump, playerRun, playerDie;
 
+    private Animator _playerAnimator;
 
     private void Start()
     {

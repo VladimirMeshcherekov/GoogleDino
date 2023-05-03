@@ -2,16 +2,16 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class CactusMove : MonoBehaviour
 {
-    private Rigidbody2D _enemyRb;
+    private Rigidbody2D _thisEnemyRb;
     [SerializeField] private float enemyVelocity;
     
     void Start()
     {
-        _enemyRb = GetComponent<Rigidbody2D>();
+        _thisEnemyRb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        _enemyRb.velocity = Vector2.left * enemyVelocity;
+        _thisEnemyRb.velocity = Vector2.left * enemyVelocity;
     }
 }

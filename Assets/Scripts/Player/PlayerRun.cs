@@ -26,7 +26,7 @@ public class PlayerRun : MonoBehaviour
             _soundPlayer.PlayDieSound();
         }
 
-        if (enterCollider2D.gameObject.TryGetComponent(out AddScoreToPlayer addScoreToPlayer))
+        if (enterCollider2D.gameObject.TryGetComponent(out AddScoreToPlayerComponent addScoreToPlayer))
         {
             PlayerAddScore?.Invoke();
         }

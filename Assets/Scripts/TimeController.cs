@@ -3,7 +3,7 @@ using Zenject;
 
 public class TimeController : MonoBehaviour
 {
-   [Inject] private PlayerRun playerRun;
+   [Inject] private PlayerRun _playerRun;
    private const float DefaultTimeScale = 1;
    private bool _isPlayerDie = false;
    private void Awake()
@@ -14,12 +14,12 @@ public class TimeController : MonoBehaviour
 
    private void OnEnable()
    {
-      playerRun.PlayerDie += PlayerDie;
+      _playerRun.PlayerDie += PlayerDie;
    }
 
    private void OnDisable()
    {
-      playerRun.PlayerDie -= PlayerDie;
+      _playerRun.PlayerDie -= PlayerDie;
    }
 
    public void ChangePauseState()

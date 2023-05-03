@@ -38,7 +38,7 @@ public class PlayerJumpControll : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D enterCollision)
     {
-        if (enterCollision.gameObject.TryGetComponent(out Ground ground))
+        if (enterCollision.gameObject.TryGetComponent(out GroundComponent ground))
         {
             _isPlayerOnAGround = true;
             _animatePlayer.SetRunAnimation();
@@ -48,7 +48,7 @@ public class PlayerJumpControll : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D enterCollision)
     {
-        if (enterCollision.gameObject.TryGetComponent(out Ground ground))
+        if (enterCollision.gameObject.TryGetComponent(out GroundComponent ground))
         {
             _isPlayerOnAGround = false;
         }
